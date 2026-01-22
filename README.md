@@ -58,35 +58,3 @@ pip install \
 	python Covid-19_Dashboard.py
 	```
 3. Open the URL printed in the terminal (defaults to http://127.0.0.1:8050/) and use the state dropdown to explore the trends.
-
-### Common Flags
-- `python Covid-19_Dashboard.py --port 8080` (edit the script if you need a custom port).
-- Set `debug=False` inside `app.run_server` when deploying to production.
-
-## Working with the Notebook
-The exploratory notebook `Covid-19_Trend_Analysis.ipynb` contains data wrangling and the SVM time-series experiment.
-
-1. Activate the virtual environment.
-2. Install Jupyter (if not already available):
-	```bash
-	pip install notebook
-	```
-3. Launch Jupyter and open the notebook:
-	```bash
-	jupyter notebook
-	```
-4. Run the cells sequentially. Ensure the CSV files remain relative to the notebook so the default paths resolve.
-
-## Project Structure
-- `Covid-19_Dashboard.py` – Dash application for interactive visualization.
-- `Covid-19_Trend_Analysis.ipynb` – Data preparation and forecasting experiment.
-- `Covid19 Final Data.csv` – Main dataset consumed by the dashboard.
-- `covid_19_india.csv`, `covid_vaccine_statewise.csv`, `StatewiseTestingDetails.csv` – Supplemental raw datasets.
-
-## Troubleshooting
-- **Missing wheels on Windows**: Ensure you are on Python 3.10+; older versions may not have pre-built wheels for pandas/numpy.
-- **Dash server not reachable**: Check that the terminal shows “Running on http://127.0.0.1:8050/”; firewalls or already-bound ports can block it. Change the port via `app.run_server(port=XXXX)`.
-- **Encoding errors while reading CSVs**: Pass `encoding="utf-8"` to `pd.read_csv` if you customize file paths.
-
-## Contributing
-Pull requests are welcome. Please open an issue first to discuss significant changes or new features. Remember to format code with `black` or your preferred formatter and include screenshots when altering dashboard visuals.
