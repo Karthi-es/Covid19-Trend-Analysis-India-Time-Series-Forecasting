@@ -1,0 +1,2 @@
+cd Desktop/Covid-19_Trend_Analysis
+python Covid-19_Dashboard.py
